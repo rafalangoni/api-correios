@@ -12,18 +12,19 @@
             <h1>Busca de endereços por CEP</h1>
             <form action="">
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep">
+                <input type="text" id="cep" data-tipo="cep">
             </form>
-            <button>Pesquisar</button>
+            <button data-tipo="botaoPesquisar">Pesquisar</button>
         </section>
     </main>
 
     <section>
-        <p>Logradouro: <span>...</span></p>
-        <p>Bairo: <span>...</span></p>
-        <p>Cidade: <span>...</span></p>
-        <p>Estado: <span>...</span></p>
+        <p>Logradouro: <span data-tipo="logradouro"></span></p>
+        <p>Bairro: <span data-tipo="bairro"></span></p>
+        <p>Complemento: <span data-tipo="complemento"></span></p>
+        <p>Cidade: <span data-tipo="cidade"></span></p>
+        <p>Estado: <span data-tipo="estado"></span></p>
     </section>
-    
+    <script src="app.js"></script>
 </body>
 </html>
