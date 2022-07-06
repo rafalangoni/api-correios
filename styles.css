@@ -1,0 +1,19 @@
+body{
+    background-color: #EAF6F6;
+}
+
+.display__none{
+    display: none;
+}
+
+.principal{
+    margin: 1rem;
+}
+
+.resultado__paragrafo{
+    font-weight: 600;
+}
+
+.paragrafo__span{
+    font-weight: 400;
+}

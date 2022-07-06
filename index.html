@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Busa de endereços por CEP</title>
 </head>
 <body>
 
-    <main>
+    <main class="principal">
         <section>
             <h1>Busca de endereços por CEP</h1>
-            <form action="">
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" data-tipo="cep">
-            </form>
-            <button data-tipo="botaoPesquisar">Pesquisar</button>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">CEP</span>
+                <input id="cep" data-tipo="cep" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <button data-tipo="botaoPesquisar">Pesquisar</button>
+            </div>
+        </section>
+          
+        <section>
+            <p class="resultado__paragrafo">Logradouro: <span data-tipo="logradouro" class="paragrafo__span"></span></p>
+            <p class="resultado__paragrafo">Bairro: <span data-tipo="bairro" class="paragrafo__span"></span></p>
+            <p class="resultado__paragrafo">Complemento: <span data-tipo="complemento" class="paragrafo__span"></span></p>
+            <p class="resultado__paragrafo">Cidade: <span data-tipo="cidade" class="paragrafo__span"></span></p>
+            <p class="resultado__paragrafo">Estado: <span data-tipo="estado" class="paragrafo__span"></span></p>
         </section>
     </main>
-
-    <section>
-        <p>Logradouro: <span data-tipo="logradouro"></span></p>
-        <p>Bairro: <span data-tipo="bairro"></span></p>
-        <p>Complemento: <span data-tipo="complemento">teste</span></p>
-        <p>Cidade: <span data-tipo="cidade"></span></p>
-        <p>Estado: <span data-tipo="estado"></span></p>
-    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>
