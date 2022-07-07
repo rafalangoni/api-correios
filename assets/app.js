@@ -1,7 +1,4 @@
-let inputCep = document.querySelector("[data-tipo=cep]");
-let valorDoCep = cep.value;
 const botaoPesquisar = document.querySelector("[data-tipo=botaoPesquisar]")
-const url = `https://viacep.com.br/ws/${valorDoCep}/json`;
 const options = {
     method: 'GET',
     mode: 'cors',
@@ -41,6 +38,8 @@ function validaCamposRecebidos(data) {
 
 function consultarCep() {
     botaoPesquisar.disabled = true; //evita vários cliques no botão enquanto realiza o fetch
+    let valorDoCep = cep.value;
+    const url = `https://viacep.com.br/ws/${valorDoCep}/json`;
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
