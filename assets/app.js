@@ -36,6 +36,25 @@ function validaCamposRecebidos(data) {
     }
 }
 
+/**Função abaixo retorna os elementos para a tela
+ * Isso porque se consultarmos um CEP que só retorna Cidade e UF, na próxima consulta
+ * só retornrão esses dados. Dessa forma, retorno os campos pra tela com "display=block"!;
+ */
+function retornaCampos(data) {
+    if (data.complemento !== "") {
+        let complemento = document.querySelector("[data-tipo=complemento]").parentNode;
+        complemento.style.display = "block";
+    }
+    if (data.logradouro !== "") {
+        let logradouro = document.querySelector("[data-tipo=logradouro]").parentNode;
+        logradouro.style.display = "block";
+    }
+    if (data.bairro !== "") {
+        let bairro = document.querySelector("[data-tipo=bairro]").parentNode;
+        bairro.style.display = "block";
+    }
+}
+
 function consultarCep() {
     botaoPesquisar.disabled = true; //evita vários cliques no botão enquanto realiza o fetch
     let valorDoCep = cep.value;
@@ -53,6 +72,7 @@ function consultarCep() {
             validaCamposRecebidos(data);
             document.querySelector("[data-tipo=cep]").value = '';
             botaoPesquisar.disabled = false;
+            retornaCampos(data)
         })
 }
 
