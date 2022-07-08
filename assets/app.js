@@ -56,8 +56,9 @@ function retornaCampos(data) {
 }
 
 function consultarCep() {
+    let secaoResultado = document.querySelector("[data-tipo=secao-resultado]");
     botaoPesquisar.disabled = true; //evita vários cliques no botão enquanto realiza o fetch
-    let valorDoCep = cep.value;
+    let valorDoCep = cep.value.replace(/\D/g, '');
     const url = `https://viacep.com.br/ws/${valorDoCep}/json`;
     fetch(url, options)
         .then(response => response.json())
@@ -68,6 +69,7 @@ function consultarCep() {
                 botaoPesquisar.disabled = false;
                 return
             }
+            secaoResultado.style.display = "block";
             preencherCampos(data);
             validaCamposRecebidos(data);
             document.querySelector("[data-tipo=cep]").value = '';

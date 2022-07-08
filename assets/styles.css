@@ -14,6 +14,10 @@ body{
     max-width: 50%;
 }
 
+.secao__resultado{
+    display: none;
+}
+
 .resultado__paragrafo{
     font-weight: 600;
 }
