@@ -55,7 +55,20 @@ function retornaCampos(data) {
     }
 }
 
+function validaCampoInput(){
+    let inputDoCep = document.querySelector("[data-tipo=cep]");
+    if(inputDoCep.value == "" || inputDoCep.value == null){
+        alert("Digite um CEP válido");
+        throw new Error("CEP Inválido.");
+    };
+    if(inputDoCep.value.length > 8 || inputDoCep.value.length <= 7){
+        alert("Informe o CEP com 8 dígitos.");
+        throw new Error("CEP Inválido.");
+    }
+}
+
 function consultarCep() {
+    validaCampoInput();
     let secaoResultado = document.querySelector("[data-tipo=secao-resultado]");
     botaoPesquisar.disabled = true; //evita vários cliques no botão enquanto realiza o fetch
     let valorDoCep = cep.value.replace(/\D/g, '');
@@ -67,7 +80,7 @@ function consultarCep() {
                 alert('Cep inválido, tente novamente.');
                 document.querySelector("[data-tipo=cep]").value = '';
                 botaoPesquisar.disabled = false;
-                return
+                throw new Error("CEP Inválido.");
             }
             secaoResultado.style.display = "block";
             preencherCampos(data);
