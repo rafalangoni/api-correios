@@ -1,3 +1,4 @@
+console.log("dia de hospital");
 const botaoPesquisar = document.querySelector("[data-tipo=botaoPesquisar]")
 const options = {
     method: 'GET',
